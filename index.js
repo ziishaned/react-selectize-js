@@ -1,7 +1,7 @@
 import "selectize";
 import $ from 'jquery';
 import 'selectize/dist/css/selectize.css';
-import React, {ReactElement, useEffect, useRef} from 'react';
+import React, {useEffect, useRef} from 'react';
 
 export function Select(props) {
   const selectInput = useRef(null);
