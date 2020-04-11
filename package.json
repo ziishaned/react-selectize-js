@@ -1,6 +1,6 @@
 {
   "name": "react-selectize-js",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Light weight selectize.js component for react",
   "main": "build/index.js",
   "license": "MIT",

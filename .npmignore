@@ -4,3 +4,4 @@ webpack.config.js
 .DS_STORE
 .editorconfig
 .gitignore
+.babelrc
