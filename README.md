@@ -1,4 +1,14 @@
-## Demo
+## react-selectize-js
+
+Light weight selectize.js component for react.
+
+## Install
+
+```bash
+yarn add react-selectize-js
+```
+
+## Usage
 
 ```js
 import { Select } from 'react-selectize-js';
