@@ -1,6 +1,6 @@
 ## react-selectize-js
 
-Light weight selectize.js component for react.
+Light weight `selectize.js` component for react.
 
 ## Install
 
