@@ -10,7 +10,7 @@ export function Select(props) {
     const {current: selectInputRef} = selectInput;
     const $select = $(selectInputRef);
 
-    $select.selectize(props.options || {});
+    $select.selectize();
     $select.on('change', props.onChange);
 
     return () => {
