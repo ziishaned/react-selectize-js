@@ -1,4 +1,6 @@
 src
+examples
+babel.config.js
 webpack.config.js
 .idea
 .DS_STORE

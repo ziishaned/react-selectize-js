@@ -3,7 +3,7 @@ import $ from 'jquery';
 import 'selectize/dist/css/selectize.css';
 import React, {useEffect, useRef} from 'react';
 
-export function Select(props) {
+function Select(props) {
   const selectInput = useRef(null);
 
   useEffect(() => {
@@ -12,10 +12,6 @@ export function Select(props) {
 
     $select.selectize();
     $select.on('change', props.onChange);
-
-    return () => {
-      selectInputRef.selectize.destroy()
-    };
   }, [selectInput, props.onChange]);
 
   return (
@@ -24,3 +20,5 @@ export function Select(props) {
     </select>
   );
 }
+
+export default Select;

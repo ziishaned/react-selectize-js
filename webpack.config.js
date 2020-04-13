@@ -1,26 +1,25 @@
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+const htmlWebpackPlugin = new HtmlWebpackPlugin({
+  filename: './index.html',
+  template: path.join(__dirname, 'examples/src/index.html'),
+})
 
 module.exports = {
   mode: "production",
-  entry: './src/index.js',
+  entry: path.join(__dirname, 'examples/src/index.js'),
   output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: 'index.js',
-    libraryTarget: 'commonjs2'
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'examples/dist'),
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
-        include: path.resolve(__dirname, 'src'),
+        test: /\.(js|jsx)$/,
+        use: 'babel-loader',
         exclude: /(node_modules|build)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env']
-          }
-        }
       },
       {
         test: /\.css$/i,
@@ -28,9 +27,10 @@ module.exports = {
       },
     ]
   },
-  externals: {
-    'react': 'commonjs react'
+  resolve: {
+    extensions: ['.js', '.jsx']
   },
+  plugins: [htmlWebpackPlugin],
   optimization: {
     minimize: true,
     minimizer: [

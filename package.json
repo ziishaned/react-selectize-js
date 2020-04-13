@@ -1,11 +1,16 @@
 {
   "name": "react-selectize-js",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Light weight selectize.js component for react",
   "main": "build/index.js",
   "license": "MIT",
   "scripts": {
-    "build": "webpack"
+    "start": "webpack-dev-server --mode development",
+    "transpile": "babel src -d dist -s inline --copy-files",
+    "prepublishOnly": "npm run transpile",
+    "build": "webpack --mode production",
+    "deploy": "gh-pages -d examples/dist",
+    "publish-demo": "npm run build && npm run deploy"
   },
   "keywords": [
     "react-selectize",
@@ -28,8 +33,7 @@
     "jquery": "^3.5.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "selectize": "^0.12.6",
-    "webpack": "^4.42.1"
+    "selectize": "^0.12.6"
   },
   "peerDependencies": {
     "react": "^16.13.1",
@@ -40,10 +44,15 @@
     "@babel/core": "^7.9.0",
     "@babel/plugin-transform-react-jsx": "^7.9.4",
     "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.9.4",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.5.2",
+    "gh-pages": "^2.2.0",
+    "html-webpack-plugin": "^4.2.0",
     "style-loader": "^1.1.3",
     "terser-webpack-plugin": "^2.3.5",
-    "webpack-cli": "^3.3.11"
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
   }
 }
